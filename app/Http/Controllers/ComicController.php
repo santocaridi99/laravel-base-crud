@@ -60,9 +60,10 @@ class ComicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Comic $comic)
     {
-        //
+        // automaticamente fa il find or fail
+        return view("comics.show",compact("comic"));
     }
 
     /**

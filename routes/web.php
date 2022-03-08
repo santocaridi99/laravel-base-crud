@@ -12,5 +12,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+// route che ritorna tutto contenuto data
+Route::get("/", "ComicController@index")->name("comics.index");
 // route resource che contiene tutte le rotte Crude
 Route::resource("comics", "ComicController");

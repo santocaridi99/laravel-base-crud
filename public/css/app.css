@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: lightslategrey;
+}
+
+.container {
+  width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: calc(16.6666666667% - 20px);
+  background-color: black;
+  margin: 20px;
+  cursor: pointer;
+}
+
+.card img {
+  width: 100%;
+}
+
+.card .text-box {
+  color: white;
+  text-align: center;
+}
+
+form {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+form button {
+  padding: 20px 30px;
+  background-color: blue;
+  color: white;
+  cursor: pointer;
+}
+
