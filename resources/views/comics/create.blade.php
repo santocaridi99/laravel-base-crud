@@ -2,6 +2,8 @@
 @extends('default')
 @section('title','Comic/NuovoFumetto.it')
 @section('content')
+{{-- azione conserva i dati scritti , metodo post --}}
+{{-- i nomi degli input devono corrispondere a quelli della request --}}
 <form action="{{route('comics.store')}}" method="POST">
     @csrf
     <div>
