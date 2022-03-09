@@ -39,11 +39,11 @@ class ComicController extends Controller
     public function store(Request $request)
     {
         // // salvo i dati della richiesta in una nuova data
-        $newdata = $request->all();
+        $data = $request->all();
 
         // li scrivo in modo automatico
         $newComic = new Comic();
-        $newComic->fill($newdata);
+        $newComic->fill($data);
         // $newComic->title = $newdata["title"];
         // $newComic->description = $newdata["description"];
         // $newComic->thumb = $newdata["thumb"];
@@ -54,7 +54,7 @@ class ComicController extends Controller
         // Salvo newcomics
         $newComic->save();
         // Redirect 
-        return redirect()->route('comics.index');
+        return redirect()->route('comics.show',$newComic->id);
     }
 
     /**
@@ -94,13 +94,13 @@ class ComicController extends Controller
     public function update(Request $request, $id)
     {
         // faccio la request ti tutti i dati e li metto nella variahile
-        $newdata = $request->all();
+        $data = $request->all();
         // find or fail del relativo fumetto
         $comic = Comic::findOrFail($id);
         // update esegue il fill con i nuovi dati e salva in automatico
-        $comic->update($newdata);
+        $comic->update($data);
         // ritorno alla rotta show e gli passo l'id
-        return redirect()->route("comics.show",$id);
+        return redirect()->route("comics.show", $id);
     }
 
     /**
@@ -111,6 +111,11 @@ class ComicController extends Controller
      */
     public function destroy($id)
     {
-        //
+        // find or fail del relativo fumetto
+        $comic = Comic::findOrFail($id);
+        // cancella il fumetto
+        $comic->delete();
+        // redirexr all'index
+        return redirect()->route("comics.index");
     }
 }

@@ -11,7 +11,7 @@
     <li><strong>Prezzo</strong>: {{$comic->price}}</li>
     <li><strong>Tipo</strong>: {{$comic->type}}</li>
 </ul>
-{{-- un bottone che fa ritornare all'home --}}
+{{-- un bottone che fa ritornare alla home --}}
 <form method="get" action="{{route('comics.index')}}">
     {{-- do token al form --}}
     @csrf
