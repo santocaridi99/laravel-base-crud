@@ -93,7 +93,7 @@ class ComicController extends Controller
      */
     public function update(Request $request, $id)
     {
-        // faccio la request ti tutti i dati e li metto nella variahile
+        // faccio la request ti tutti i dati e li metto nella variabile
         $data = $request->all();
         // find or fail del relativo fumetto
         $comic = Comic::findOrFail($id);

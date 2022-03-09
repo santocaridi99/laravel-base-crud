@@ -8,6 +8,7 @@
     <div class="card">
         <img src="{{$comic->thumb}}" alt="{{$comic->title}}">
         <div class="text-box">
+            <p>{{$comic->title}}</p>
             <p>{{$comic->series}}</p>
             <p>{{$comic->price}}$</p>
             <p>{{$comic->type}}</p>
