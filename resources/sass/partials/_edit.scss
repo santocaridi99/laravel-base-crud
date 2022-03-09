@@ -1,0 +1,21 @@
+.edit{
+    padding: 20px;
+   div{
+       margin-top: 10px;
+       display: flex;
+       label{
+           color: white;
+           margin-right: 5px;
+       }
+       button{
+           background-color: blue;
+           color: white;
+           padding: 10px 10px;
+           border: 2px solid white;
+           border-radius: 10px;
+       }
+       textArea{
+           align-self: flex-end;
+       }
+   }
+}

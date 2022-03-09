@@ -1,10 +1,10 @@
 {{-- estendi il layout di default --}}
 @extends('default')
-@section('title','Comic/NuovoFumetto.it')
+@section('title','Nuovo Fumetto')
 @section('content')
 {{-- azione conserva i dati scritti , metodo post --}}
 {{-- i nomi degli input devono corrispondere a quelli della request --}}
-<form action="{{route('comics.store')}}" method="POST">
+<form action="{{route('comics.store')}}" method="POST" class="edit">
     @csrf
     <div>
         <label class="form-label">Titolo</label>
@@ -13,7 +13,7 @@
 
     <div>
         <label class="form-label">Descrizione</label>
-        <input type="text" class="form-control" name="description">
+        <textarea name="description" class="form-control" cols="30" rows="10"></textarea>
     </div>
 
     <div>
@@ -45,5 +45,11 @@
         <button type="reset">Indietro</button>
         <button type="submit">Crea Fumetto</button>
     </div>
+</form>
+{{-- un bottone che fa ritornare alla home --}}
+<form method="get" action="{{route('comics.index')}}" class="home">
+    {{-- do token al form --}}
+    @csrf
+    <button type="submit">Home</button>
 </form>
 @endsection

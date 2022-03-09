@@ -1,0 +1,28 @@
+ul{
+    font-size: 20px;
+    color: white;
+    li{
+        display: flex;
+        margin: 10px;
+        strong{
+            margin-right: 10px;
+        }
+        img{
+            align-self: flex-end;
+        }
+
+    }
+}
+
+.home{
+    display: flex;
+    justify-content: center;
+    button{
+        background-color: blue;
+        color:white;
+        padding: 20px 40px;
+        border: solid transparent;
+        border-radius: 5px;
+
+    }
+}

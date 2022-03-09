@@ -14,15 +14,17 @@
             <p>{{$comic->type}}</p>
             <p>{{$comic->sale_data}}</p>
             {{-- dettagli del fumetto --}}
-            <p><a href="{{ route('comics.show', $comic->id) }}">Dettagli</a></p>
-            <p><a href="{{ route('comics.edit', $comic->id) }}">Modifica</a></p>
-            @include('partials.deleteButton')
+            <div class="details">
+                <p><a href="{{ route('comics.show', $comic->id) }}">Dettagli</a></p>
+                <p><a href="{{ route('comics.edit', $comic->id) }}">Modifica</a></p>
+                @include('partials.deleteButton')
+            </div>
         </div>
     </div>
     @endforeach
 </div>
 {{-- metodo get , azione usa funzione route create --}}
-<form method="get" action="{{route('comics.create')}}">
+<form method="get" action="{{route('comics.create')}}" class="add">
     {{-- do token al form --}}
     @csrf
     <button type="submit">Aggiungi Fumetto</button>

@@ -4,15 +4,15 @@
 @section('content')
 <ul>
     {{-- semplice ul con dettagli --}}
-    <li><strong>Titolo</strong>: {{$comic->title}}</li>
-    <li><strong>Uscita</strong>: {{$comic->sale_date}}</li>
-    <li><strong>Descrizione</strong>: {{$comic->description}}</li>
-    <li><strong>IMG</strong>: <img src="{{$comic->thumb}}" alt=""></li>
-    <li><strong>Prezzo</strong>: {{$comic->price}}</li>
-    <li><strong>Tipo</strong>: {{$comic->type}}</li>
+    <li><strong>Titolo:</strong> {{$comic->title}}</li>
+    <li><strong>Uscita:</strong>{{$comic->sale_date}}</li>
+    <li><strong>Descrizione:</strong> {{$comic->description}}</li>
+    <li><strong>IMG:</strong><img src="{{$comic->thumb}}" alt=""></li>
+    <li><strong>Prezzo:</strong> {{$comic->price}}</li>
+    <li><strong>Tipo:</strong> {{$comic->type}}</li>
 </ul>
 {{-- un bottone che fa ritornare alla home --}}
-<form method="get" action="{{route('comics.index')}}">
+<form method="get" action="{{route('comics.index')}}" class="home">
     {{-- do token al form --}}
     @csrf
     <button type="submit">Home</button>
