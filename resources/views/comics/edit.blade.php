@@ -1,10 +1,21 @@
-{{-- uguale al form create solo che passo action update e i relativi metodi  --}}
+{{-- uguale al form create solo che passo action update e i relativi metodi --}}
 {{-- per avere un placeholder ho dato come value i dati dinamici --}}
 
 {{-- estendi il layout di default --}}
 @extends('default')
 @section('title','Modifica fumetto'.$comic->id)
 @section('content')
+{{-- se ci sono errori nella errors bag --}}
+@if($errors->any())
+{{-- faccio una ul --}}
+<ul class="error">
+    {{-- seleziono tutti gli errori della error bag con function all() --}}
+    {{-- creo una li per ogni errore con il foreach --}}
+    @foreach ($errors->all() as $error)
+    <li>{{$error}}</li>
+    @endforeach
+</ul>
+@endif
 <form action="{{route('comics.update', $comic->id)}}" method="POST" class="edit">
     @csrf
     {{-- per inserire i metodi put o patch di update usiamo @ method --}}

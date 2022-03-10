@@ -2,6 +2,18 @@
 @extends('default')
 @section('title','Nuovo Fumetto')
 @section('content')
+
+{{-- se ci sono errori nella errors bag --}}
+@if($errors->any())
+{{-- faccio una ul --}}
+<ul class="error">
+    {{-- seleziono tutti gli errori della error bag con function all() --}}
+    {{-- creo una li per ogni errore con il foreach --}}
+    @foreach ($errors->all() as $error)
+    <li>{{$error}}</li>
+    @endforeach
+</ul>
+@endif
 {{-- azione conserva i dati scritti , metodo post --}}
 {{-- i nomi degli input devono corrispondere a quelli della request --}}
 <form action="{{route('comics.store')}}" method="POST" class="edit">
@@ -38,7 +50,7 @@
 
     <div>
         <label class="form-label">Tipo</label>
-        <input name="type" class="form-control" >
+        <input name="type" class="form-control">
     </div>
 
     <div>
